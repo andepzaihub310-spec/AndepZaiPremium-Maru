@@ -1296,13 +1296,13 @@ function AttackNoCoolDown()
     if not equippedWeapon then return end
     local enemiesInRange = GetEnemiesInRange(character, 60)
     if equippedWeapon:FindFirstChild("LeftClickRemote") then
-        local attackCount = 1  
+        local attackCount = 99  
         for _, enemy in ipairs(enemiesInRange) do
             local rootPart = enemy:FindFirstChild("HumanoidRootPart")
             if rootPart then
                 local direction = (rootPart.Position - character:GetPivot().Position).Unit
                 equippedWeapon.LeftClickRemote:FireServer(direction, attackCount)
-                attackCount = attackCount + 99999999999999
+                attackCount = attackCount + 1
             end
         end
     else
@@ -2550,7 +2550,7 @@ local function FastAttackLoop()
         if type(AttackNoCoolDown) == "function" then
             AttackNoCoolDown()
         end
-        task.wait(0000000000.0000001)
+        task.wait(0000000000000000000000.0000001)
     end
 end
 Toggle:OnChanged(function(Value)
