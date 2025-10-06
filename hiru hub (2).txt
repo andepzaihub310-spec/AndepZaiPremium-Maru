@@ -2585,7 +2585,7 @@ spawn(function()
                     local rootPart = enemy:FindFirstChild("HumanoidRootPart")
                     if humanoid and rootPart and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
                         local distance = (rootPart.Position - LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-                        if getgenv().StartMagnet and (enemy.Name == MonFarm or enemy.Name == Mon) and humanoid.Health > 0 and distance <= 350 then
+                        if getgenv().StartMagnet and (enemy.Name == MonFarm or enemy.Name == Mon) and humanoid.Health > 0 and distance <= 500 then
                             if enemy.Name == "Factory Staff" and PosMon and (rootPart.Position - PosMon.Position).Magnitude <= 5000 then
                                 if rootPart.Parent then
                                     rootPart.CanCollide = false
@@ -2645,9 +2645,9 @@ spawn(function()
 end)
 Slider = Settings:AddSlider("Slider", {
      Title = "Farm Distance",
-     Default = 15,
+     Default = 500,
      Min = 0,
-     Max = 30,
+     Max = 1000,
      Rounding = 5,
      Callback = function(Value)
          PosY = Value
@@ -8090,7 +8090,7 @@ local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Gas Hub",
+        Title = "Andepzai Hub",
         Text = "Đã Tải Xong",
         Duration = 1
     })
