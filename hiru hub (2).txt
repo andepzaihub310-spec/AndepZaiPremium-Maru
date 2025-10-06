@@ -16,7 +16,7 @@ local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Gas Hub",
+        Title = "Andepzai Hub",
         Text = "Loading...",
         Duration = 5
     })
@@ -2645,9 +2645,9 @@ spawn(function()
 end)
 Slider = Settings:AddSlider("Slider", {
      Title = "Farm Distance",
-     Default = 500,
+     Default = 10,
      Min = 0,
-     Max = 1000,
+     Max = 15,
      Rounding = 5,
      Callback = function(Value)
          PosY = Value
